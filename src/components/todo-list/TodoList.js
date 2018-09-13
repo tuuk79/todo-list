@@ -2,20 +2,17 @@ import React, { Component } from 'react';
 import Todo from '../todo/Todo';
 
 class TodoList extends Component {
-	constructor() {
-		super();
-		this.state = {
-			todoItems: []
-		};
+	constructor(props) {
+		super(props);
 	}
 
 	render() {
-		const todoListItems = this.state.todoItems.map((todoItem, index) => {
-			return <Todo key={index} todoText={todoItem.text} />
+		const todos = this.props.todos && this.props.todos.map((todo, index) => {
+			return <Todo key={index} text={todo.text} />
 		});
 
 		return (
-			<ul>{todoListItems}</ul>
+			<ul>{todos}</ul>
 		);
 	}
 }

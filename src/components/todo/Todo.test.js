@@ -18,7 +18,7 @@ it('should render a checkbox in the Todo component', () => {
 	expect(wrapper.find('input[type="checkbox"]').length).to.equal(1);
 });
 
-it('should render a Todo with text', () => {
-	const wrapper = mount(<Todo todoText="do something"/>);
-	expect(wrapper.find('label').text()).to.equal(wrapper.props().todoText);
+it('should render a todo with text', () => {
+	const wrapper = mount(<Todo text="do something"/>);
+	expect(wrapper.find('div').text()).to.equal(wrapper.props().text);
 });

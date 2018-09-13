@@ -7,10 +7,10 @@ class Todo extends Component {
 
 	render() {
 		return (
-			<label>
+			<div>
 				<input type="checkbox"></input>
-				<span>{this.props.todoText}</span>
-			</label>
+				<span>{this.props.text}</span>
+			</div>
 		);
 	}
 }

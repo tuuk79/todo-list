@@ -15,9 +15,9 @@ it('should render a TodoList component', () => {
 });
 
 it('should add a todo to the todo list', () => {
-	const wrapper = shallow(<TodoList/>);
+	const wrapper = shallow(<TodoList />);
 
-	const todoItems = [
+	const todos = [
 		{
 			text: 'some todo item',
 			isChecked: true
@@ -28,10 +28,11 @@ it('should add a todo to the todo list', () => {
 		}
 	];
 
-	wrapper.setState({todoItems: todoItems});
+	wrapper.setProps({
+		todos: todos
+	});
 
 	const renderedTodos = wrapper.find(Todo).length;
-	const stateTodoItems = wrapper.state().todoItems.length;
 
-	expect(renderedTodos).to.equal(stateTodoItems);
+	expect(renderedTodos).to.equal(todos.length);
 });
